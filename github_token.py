@@ -14,8 +14,11 @@ class GithubToken():
     # set os.environ['GITHUB_TOKEN']
 
   def check_environment_var(self):
-    return os.getenv(GITHUB_TOKEN, None)
-
+    gt = os.getenv('GITHUB_TOKEN')
+    if not gt:
+      return None
+    else:
+      return gt
 
   def user_input(self):
     pass
