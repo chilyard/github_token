@@ -1,3 +1,4 @@
+import os
 
 
 class GithubToken():
@@ -8,10 +9,13 @@ class GithubToken():
     print("in GithubToken.init") 
 
   def set_token(self):
-    pass
+    print("in set_token")
+    #get user input
+    # set os.environ['GITHUB_TOKEN']
 
-  def get_token(self):
-    pass
+  def check_environment_var(self):
+    return os.getenv(GITHUB_TOKEN, None)
+
 
   def user_input(self):
     pass

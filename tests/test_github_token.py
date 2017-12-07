@@ -8,11 +8,11 @@ class TestGithubToken(unittest.TestCase):
   def setUp(self):
     self.token = github_token.GithubToken()
 
-  def test_get_token(self):
-    self.assertIsNone(self.token.get_token())
+  def test_check_environment_variable(self):
+    self.assertIsNone(self.token.check_environment_var())
 
-  #def test_set_token(self):
-  #  self.assert
+  def test_set_token_in_env(self):
+    self.assertIsNotNone(self.token.get_token())
 
 
 if __name__ == '__main__':
