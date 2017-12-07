@@ -16,7 +16,7 @@ class GithubToken():
   def check_environment_var(self):
     gt = os.getenv('GITHUB_TOKEN')
     if not gt:
-      return None
+      return
     else:
       return gt
 
