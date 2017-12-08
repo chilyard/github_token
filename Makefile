@@ -1,9 +1,9 @@
 
 default :
-	python3 main.py
+	python3 github_token/main.py
 
-test :
-	python3 -m unittest tests/test_github_token.py
+tests :
+	python3 -m unittest discover
 
 clean :
 	rm -f test.txt
