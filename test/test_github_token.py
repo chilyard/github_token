@@ -2,6 +2,7 @@
 import unittest
 import github_token
 from github_token import github_token
+import re
 
 
 class TestGithubToken(unittest.TestCase):
@@ -13,8 +14,9 @@ class TestGithubToken(unittest.TestCase):
     self.assertIsNone(self.token.check_environment_var())
 
   def test_check_environment_variable_is_set(self):
-    token = self.token.check_environment_var()
-    self.assertRegex(token, "^[a-z0-9]{39,42}")
+    gt = self.token.check_environment_var()
+    gtre = re.compile("^[a-z0-9]{39,42}")
+    self.assertRegex(gt, gtre)
 
   #def test_set_token_in_env(self):
   #  self.assertIsNotNone(self.token.set_environment_var())
