@@ -11,8 +11,10 @@ class TestGithubToken(unittest.TestCase):
     self.token = github_token.GithubToken()
 
   def test_check_environment_variable_is_unset(self):
-    self.assertIsNone(self.token.check_environment_var())
+    gt = self.token.check_environment_var()
+    self.assertIsNone(gt)
 
+  @unittest.skipUnless(gt, "gt is unset")
   def test_check_environment_variable_is_set(self):
     gt = self.token.check_environment_var()
     gtre = re.compile("^[a-z0-9]{39,42}")
