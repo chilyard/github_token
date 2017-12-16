@@ -1,4 +1,5 @@
 import os
+import re
 
 
 class GithubToken():
@@ -14,13 +15,11 @@ class GithubToken():
 
   def check_environment_var(self):
     gt = os.getenv('GITHUB_TOKEN')
-    if not gt:
-      return
+    #gtre = re.search("^[a-z0-9]{39,42}", gt)
+    if gt:
+      return gt
     else:
       print("GITHUB_TOKEN environment var is unset")
-      return gt
-
-  def user_input(self):
-    pass
+      return
 
 

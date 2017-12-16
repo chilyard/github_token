@@ -19,8 +19,7 @@ class TestGithubToken(unittest.TestCase):
   @unittest.skipUnless(os.getenv('GITHUB_TOKEN'), "github_token is set")
   def test_check_environment_variable_is_set(self):
     gt = self.token.check_environment_var()
-    gtre = re.compile("^[a-z0-9]{39,42}")
-    self.assertRegex(gt, gtre)
+    self.assertTrue(gt)
 
   #def test_set_token_in_env(self):
   #  self.assertIsNotNone(self.token.set_environment_var())
