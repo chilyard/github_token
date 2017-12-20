@@ -1,9 +1,11 @@
 
 import unittest
 import github_token
-from github_token import github_token
 import re
 import os
+from github_token import github_token
+from unittest.mock import patch
+
 
 
 class TestGithubToken(unittest.TestCase):
@@ -21,6 +23,7 @@ class TestGithubToken(unittest.TestCase):
     gt = self.token.check_environment_var()
     self.assertTrue(gt)
 
+  @patch('self.token.self_environment_var', return_value="7010456bb538fe4dc872126fe9e545c331fd139a")
   def test_set_token_in_env(self):
     self.assertIsNotNone(self.token.set_environment_var())
     token = self.token.check_environment_var()
