@@ -7,7 +7,7 @@ class GithubToken():
   GITHUB_TOKEN = ""
 
   def __init__(self):
-    print("in GithubToken.init")
+    x = "null"
 
   def set_environment_var(self):
     user_input = input('set GITHUB_TOKEN: ')
