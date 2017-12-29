@@ -23,9 +23,9 @@ class TestGithubToken(unittest.TestCase):
     gt = self.token.check_environment_var()
     self.assertTrue(gt)
 
-  #@patch('self.token.set_environment_var()', return_value="7010456bb538fe4dc872126fe9e545c331fd139a")
+  #@patch('self.token.set_environment_var()', return_value="123k4jl34j5lsad80323lkadf0iJlk39saj2H")
   def test_set_token_in_env(self):
-    self.token.set_environment_var = MagicMock(return_value="7010456bb538fe4dc872126fe9e545c331fd139a")
+    self.token.set_environment_var = MagicMock(return_value="123k4jl34j5lsad80323lkadf0iJlk39saj2H")
     self.assertRegex(token, "^[a-z0-9]{39,42}")
 
   #def test_check_environment_variable_is_set(self):
